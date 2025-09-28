@@ -20,3 +20,15 @@ function calculateBasePay(rate, hours){
   return pay.toFixed(2);
 }
 console.log(calculateBasePay(20, 35));
+
+// Step 4:
+
+function calculateOvertimePay(rate, hours){
+  if (hours <= 40){
+    return 0;
+  }
+  let extraHours = hours - 40;
+  let otPay = extraHours * rate * 1.5;
+  return otPay.toFixed(2);
+}
+console.log(calculateOvertimePay(24,45))
