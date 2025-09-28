@@ -32,3 +32,16 @@ function calculateOvertimePay(rate, hours){
   return otPay.toFixed(2);
 }
 console.log(calculateOvertimePay(24,45))
+
+// Step 5: 
+
+ let taxRate = 0.15;  
+
+ function calculateTaxes(grossPay){
+  let net = grossPay * (1 - taxRate);
+  return net.toFixed(2);
+ }
+
+ console.log(calculateTaxes(2500))
+
+ 
