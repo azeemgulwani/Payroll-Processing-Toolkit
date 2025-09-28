@@ -1,0 +1,1 @@
+It is a payroll toolkit using JavaScript functions to automate salary, tax, and overtime calculations.
