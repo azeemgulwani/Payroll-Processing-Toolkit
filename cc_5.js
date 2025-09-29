@@ -65,5 +65,11 @@ function processPayroll(employee){
 
 for (let emp of employees){
   let p = processPayroll(emp);
-  console.log(p);
+  console.log({
+    name: p.name,
+    basePay: "$" + p.basePay.toFixed(2),
+    overtimePay: "$" + p.overtimePay.toFixed(2),
+    grossPay: "$" + p.grossPay.toFixed(2),
+    netPay: "$" + p.netPay.toFixed(2)
+  });
 }
