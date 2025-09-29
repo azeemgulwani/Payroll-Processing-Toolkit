@@ -61,6 +61,8 @@ function processPayroll(employee){
   };
 }
 
+console.log(processPayroll(employees[0]))
+
 // Step 7:
 
 for (let emp of employees){
