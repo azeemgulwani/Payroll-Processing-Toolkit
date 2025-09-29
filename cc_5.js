@@ -17,7 +17,7 @@ function calculateBasePay(rate, hours){
     baseHours = 40;
   }
   let pay = rate * baseHours;
-  return pay.toFixed(2);
+  return pay;
 }
 console.log(calculateBasePay(20, 35));
 
@@ -29,17 +29,17 @@ function calculateOvertimePay(rate, hours){
   }
   let extraHours = hours - 40;
   let otPay = extraHours * rate * 1.5;
-  return otPay.toFixed(2);
+  return otPay;
 }
 console.log(calculateOvertimePay(24,45))
 
 // Step 5: 
 
-let taxRate = 0.15;  
+const taxRate = 0.15;  
 
 function calculateTaxes(grossPay){
   let net = grossPay * (1 - taxRate);
-  return net.toFixed(2);
+  return net;
 }
 
 console.log(calculateTaxes(2500))
@@ -49,7 +49,7 @@ console.log(calculateTaxes(2500))
 function processPayroll(employee){
   let basePay = calculateBasePay(employee.hourlyRate, employee.hoursWorked);
   let overtimePay = calculateOvertimePay(employee.hourlyRate, employee.hoursWorked);
-  let grossPay = (basePay + overtimePay).toFixed(2);
+  let grossPay = basePay + overtimePay;
   let netPay = calculateTaxes(grossPay);
 
   return {
@@ -59,4 +59,11 @@ function processPayroll(employee){
     grossPay: grossPay,
     netPay: netPay
   };
+}
+
+// Step 7:
+
+for (let emp of employees){
+  let p = processPayroll(emp);
+  console.log(p);
 }
